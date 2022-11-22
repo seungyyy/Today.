@@ -1,7 +1,8 @@
 import express from 'express';
 import  dotenv from 'dotenv'
-import { router } from './routers/user';
+import { userRouter } from './routers/user';
 import mongoose from 'mongoose';
+import router from './routers';
 
 const app = express();
 
@@ -23,5 +24,5 @@ app.listen(port, ()=> {
 
 app.use(express.json())
 
-app.use('/user', router);
+app.use(router);
 
